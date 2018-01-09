@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-6"><h4>Saque</h4></div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="alert alert-danger" ng-show="error">
+                                There was a problem logging in. Please try again.
+                            </div>
+                            <form name="form" ng-submit="withdraw()">
+                                <div class="form-group">
+                                    <label for="withdraw">Saque:</label>
+                                    <input type="text" ng-model="form.withdraw" id="withdraw" class="form-control"
+                                           placeholder="valor" ui-number-mask>
+                                </div>
+                                <button type="submit" class="btn btn-primary" ng-disabled="able == false">Sacar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-6"><h4>Conta</h4></div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="alert alert-danger" ng-show="error">
+                                There was a problem logging in. Please try again.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row space">
+                        <div class="col-lg-6">
+                            <p>Saldo Atual: {{ balance }}</p>
+                        </div>
+                    </div>
+                    <div class="row space">
+                        <div class="col-lg-6">
+                            <p>Saque: {{ form.withdraw }}</p>
+                        </div>
+                    </div>
+                    <div ng-show="able == false">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h4 class="alert alert-danger" >Retire:</h4>
+                            </div>
+                        </div>
+                        <div class="row" ng-repeat="note in numberOfBills">
+                            <div class="col-lg-6">
+                                <p>{{ note.amount }} nota(s) de R$ {{ note.bill }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-primary" ng-click="getBills()">Retirar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

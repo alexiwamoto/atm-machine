@@ -1,0 +1,37 @@
+<header>
+    <nav role="navigation" class="navbar navbar-inverse">
+        <div class="row">
+            <p class="title">ATM</p>
+        </div>
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbarCollapse" class="collapse navbar-collapse navlink">
+                <p ng-show="logged == false" class="navbar-text"><a href="/register" class="navbar-link">Cadastro</a></p>
+                <p ng-show="logged == true" class="navbar-text"><a href="/transaction" class="navbar-link">Operação</a></p>
+                <p ng-show="logged == true" class="navbar-text"><a href="/profile" class="navbar-link">Perfil</a></p>
+                <p ng-show="logged == false" class="navbar-text"><a href="/" class="navbar-link">Login</a></p>
+                <p ng-show="logged == true" class="navbar-text"><a href="" ng-click="logout()" class="navbar-link">Logout</a></p>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="row space">
+    <div class="col-lg-8">
+    </div>
+    <div class="col-lg-4 offset-lg-8 text-center right-margin">
+        <h4 ng-show="logged == false">
+            Usuário não logado
+        </h4>
+        <h4 ng-show="logged == true">
+            Bem vindo(a) {{ authUser.username }}
+        </h4>
+    </div>
+
+</div>

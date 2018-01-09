@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="aiwamoto">
+        <createTable tableName="user">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bank_balance" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="auth_status" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="withdraw_cash" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="aiwamoto">
+        <insert tableName="user" dbms="h2">
+            <column name="username" value="admin"/>
+            <column name="password" value="8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918"/>
+            <column name="bank_balance" value="0"/>
+            <column name="auth_status" value="true"/>
+            <column name="withdraw_cash" value="0"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="3" author="aiwamoto">
+        <insert tableName="user" dbms="h2">
+            <column name="username" value="William"/>
+            <column name="password" value="A991E84C62A25C5A972F67C47CD81F31063C2DDE905A8428977B0458073465CD"/>
+            <column name="bank_balance" value="600"/>
+            <column name="auth_status" value="true"/>
+            <column name="withdraw_cash" value="0"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="4" author="aiwamoto">
+        <insert tableName="user" dbms="h2">
+            <column name="username" value="Carlos"/>
+            <column name="password" value="02A3E1FC659A693124E09CC25A8B49249E126CBFA0DDDF8F45D4DEE4895BF81E"/>
+            <column name="bank_balance" value="1000"/>
+            <column name="auth_status" value="true"/>
+            <column name="withdraw_cash" value="0"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="5" author="aiwamoto">
+        <insert tableName="user" dbms="h2">
+            <column name="username" value="Alexandre"/>
+            <column name="password" value="503AE5403EFC54B676A4B551F30D9439E42AA4C362E8D21DC37A4250CFA19E17"/>
+            <column name="bank_balance" value="2000"/>
+            <column name="auth_status" value="true"/>
+            <column name="withdraw_cash" value="0"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
